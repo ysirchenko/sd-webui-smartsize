@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config width_max="640" height_max="640" step="8">
+  <aspect_ratio text="1:1" value="1.0" />
+  <aspect_ratio text="3:2" value="3/2" />
+  <aspect_ratio text="4:3" value="4/3" />
+  <aspect_ratio text="16:9" value="16/9" />
+  <resolution text="512" width="512" height="512" />
+  <resolution text="640" width="640" height="640" />
+  <resolution text="fhd" width="1920" height="1080" />
+  <resolution text="fhd" width="960" height="540" />
+</config>
