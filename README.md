@@ -7,5 +7,3 @@ Extension for [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATI
 Browse to the `Extensions` tab -> go to `Install from URL` -> paste in `https://github.com/ysirchenko/sd-webui-smartsize` -> click `Install`
 
 
-Here's how the UI looks like after installing this extension
-
