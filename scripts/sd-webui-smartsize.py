@@ -71,10 +71,9 @@ class SmartSize(scripts.Script):
             outputs = [self.img2img_width, self.img2img_height]
         else:
             outputs = [self.txt2img_width, self.txt2img_height]
-        with gr.Accordion('SmartSize', open=True):
-            with FormRow():
-                btn_img = gr.Button(value='Img', variant='tool')
-
+        with gr.Blocks():
+            with gr.Row():
+                btn_img = ToolButton(value='Img')
                 aspect_ratios_buttons = [
                     AspectRatioButton(ar=aspect_ratio['value'], value=aspect_ratio['text'])
                     for aspect_ratio in Config.aspect_ratios
@@ -86,7 +85,6 @@ class SmartSize(scripts.Script):
                             inputs=outputs,
                             outputs=outputs,
                         )
-
                 resolutions_buttons = [
                     ResolutionButton(w=resolution['width'], h=resolution['height'], value=resolution['text'])
                     for resolution in Config.resolutions
@@ -97,10 +95,8 @@ class SmartSize(scripts.Script):
                             button.reset,
                             outputs=outputs,
                         )
-
-                width_max_slider = gr.Number(minimum=64, maximum=2048, step=Config.step, label='Width(Max)', value=Config.width_max, elem_id='width_max_slider')
-                height_max_slider = gr.Number(minimum=64, maximum=2048, step=Config.step, label='Height(Max)', value=Config.height_max, elem_id='height_max_slider')
-
+                width_max_slider = gr.Number(label='Width(max)', value=Config.width_max, elem_id='width_max_slider')
+                height_max_slider = gr.Number(label='Height(max)', value=Config.height_max, elem_id='height_max_slider')
                 if is_img2img:
                     btn_img.click(self.btn_img_click,
                                   inputs=[width_max_slider, height_max_slider,
